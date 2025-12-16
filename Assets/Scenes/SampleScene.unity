@@ -845,8 +845,8 @@ MonoBehaviour:
   WallPrefab: {fileID: 6361698281638682869, guid: e62d9eeeb6a875147a105f0150b35c51, type: 3}
   SpawnPoint: {fileID: 701829426}
   YOffset: 3
-  Cooldown: 3
-  CooldownOffset: 0.3
+  Cooldown: 2.1
+  CooldownOffset: 0.4
 --- !u!114 &701829429
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3108,7 +3108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93e582617dd995d4dbdfabbbfae47e3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _jumpForce: 5
+  _jumpForce: 3.5
   _gravityScale: -7
 --- !u!212 &6921953515152522784
 SpriteRenderer:
