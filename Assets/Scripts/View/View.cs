@@ -2,5 +2,5 @@ using UnityEngine;
 
 public abstract class View : MonoBehaviour
 {
-    public abstract void Display();
+    public abstract void Display(int value);
 }

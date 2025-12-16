@@ -12,10 +12,6 @@ public class GameInfoInstaller : MonoInstaller
     {
         WallsPool pool = new WallsPool();
 
-        SignalBusInstaller.Install(Container);
-
-        Container.DeclareSignal<PlayerDiedSignal>();
-
         Container.Bind<WallsInfo>().FromInstance(_wallsInfo).AsSingle();
 
         Container.Bind<List<Portal>>().FromInstance(_portals).AsSingle();

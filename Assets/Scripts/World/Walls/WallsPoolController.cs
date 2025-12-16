@@ -15,8 +15,10 @@ public class WallsPoolController : MonoBehaviour
     private float _cooldownOffset;
     private float _timer = 0;
 
+    private SignalBus _signalBus;
+
     [Inject]
-    public void InitializeInfo(WallsInfo wallsInfo, List<Portal> portalList, WallsPool pool)
+    public void InitializeInfo(WallsInfo wallsInfo, List<Portal> portalList, WallsPool pool, SignalBus signalBus)
     {
         _pool = pool;
 
@@ -26,6 +28,8 @@ public class WallsPoolController : MonoBehaviour
         _cooldown = wallsInfo.Cooldown;
         _cooldownOffset = wallsInfo.CooldownOffset;
         _baseCooldown = _cooldown;
+
+        _signalBus = signalBus;
 
         for (int i = 0; i < wallsInfo.WallsCount; i++)
         {
@@ -74,6 +78,8 @@ public class WallsPoolController : MonoBehaviour
         Portal portal = _portalList[rnd];
 
         Portal newPortal = Instantiate(portal, wall.PortalPoint());
+
+        newPortal.InitializeBus(_signalBus);
 
         if (wall.Portal() != null)
         {
