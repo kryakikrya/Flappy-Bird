@@ -42,13 +42,15 @@ public class WallsPool
             AviableWalls[0].gameObject.SetActive(true);
             AviableWalls[0].transform.position = new Vector3 (_spawnPoint.position.x, Random.Range(-_yOffset, _yOffset), _spawnPoint.position.z);
 
+            _controller.CreatePortal(AviableWalls[0]);
+
             UnaviableWalls.Add(AviableWalls[0]);
 
             AviableWalls.RemoveAt(0);
         }
         else
         {
-            _controller.CreateNewWall();
+            Wall newWall = _controller.CreateNewWall();
         }
     }
 }

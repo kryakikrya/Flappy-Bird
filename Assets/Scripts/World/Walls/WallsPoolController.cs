@@ -31,17 +31,6 @@ public class WallsPoolController : MonoBehaviour
 
         _signalBus = signalBus;
 
-        for (int i = 0; i < wallsInfo.WallsCount; i++)
-        {
-            Wall wall = Instantiate(wallsInfo.WallPrefab, wallsInfo.SpawnPoint.transform);
-
-            wall.gameObject.SetActive(false);
-
-            CreatePortal(wall);
-
-            _pool.InitializeWall(wall);
-        }
-
         _pool.InitializeInfo(wallsInfo, this);
 
         _pool.CreateWall();
@@ -77,14 +66,14 @@ public class WallsPoolController : MonoBehaviour
 
         Portal portal = _portalList[rnd];
 
+        if (wall.Portal() != null)
+        {
+            Destroy(wall.Portal().gameObject);
+        }
+
         Portal newPortal = Instantiate(portal, wall.PortalPoint());
 
         newPortal.InitializeBus(_signalBus);
-
-        if (wall.Portal() != null)
-        {
-            Destroy(wall.Portal());
-        }
 
         wall.SetPortal(newPortal);
     }
