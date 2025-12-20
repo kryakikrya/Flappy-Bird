@@ -1,5 +1,3 @@
-using Zenject;
-
 public abstract class StrategyPortal : Portal
 {
     public override void Action(MovementContext context)

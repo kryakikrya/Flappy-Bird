@@ -805,7 +805,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 701829427}
-  - component: {fileID: 701829428}
   - component: {fileID: 701829429}
   m_Layer: 0
   m_Name: Walls Container
@@ -823,30 +822,12 @@ Transform:
   m_GameObject: {fileID: 701829426}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 14.210022, y: 0, z: -0.009450197}
+  m_LocalPosition: {x: 12, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &701829428
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 701829426}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1cfaa28554a20244c8517fa3a221df59, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  WallsCount: 5
-  WallPrefab: {fileID: 6361698281638682869, guid: e62d9eeeb6a875147a105f0150b35c51, type: 3}
-  SpawnPoint: {fileID: 701829426}
-  YOffset: 3
-  Cooldown: 1.1
-  CooldownOffset: 0.3
 --- !u!114 &701829429
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2751,6 +2732,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 151572277821541183, guid: 2d47f58aa79c5344b8b931ff558e4b83, type: 3}
+      propertyPath: _key
+      value: 32
+      objectReference: {fileID: 0}
     - target: {fileID: 5148158406470004558, guid: 2d47f58aa79c5344b8b931ff558e4b83, type: 3}
       propertyPath: m_Name
       value: Player
@@ -2830,7 +2815,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1c8913e612e0c04d82fefdab045cf35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _wallsInfo: {fileID: 701829428}
+  _wallsInfo: {fileID: 11400000, guid: c29b46b5818c3d347bc21b89fb2b3365, type: 2}
   _portals:
   - {fileID: 5799775665011540188, guid: 78ddd2ef62bd2ce4eaf7ce3a04d117ec, type: 3}
   - {fileID: 6865973379351860152, guid: 76d93acca7b3d6643a5b4c92241d9e68, type: 3}

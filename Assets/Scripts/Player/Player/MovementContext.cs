@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class MovementContext : MonoBehaviour
 {
+    [SerializeField] private KeyCode _key;
+
     private IMoveStrategy _currentStrategy;
 
     private Rigidbody2D _rb;
@@ -19,7 +21,7 @@ public class MovementContext : MonoBehaviour
     {
         if (_currentStrategy.IsHoldable)
         {
-            if (Input.GetKey(KeyCode.Space))
+            if (Input.GetKey(_key))
             {
                 _currentStrategy.Move(Time.deltaTime, _rb);
             }
@@ -30,7 +32,7 @@ public class MovementContext : MonoBehaviour
         }
         else
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(_key))
             {
                 _currentStrategy.Move(Time.deltaTime, _rb);
             }

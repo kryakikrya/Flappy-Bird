@@ -51,7 +51,7 @@ public class WallsPoolController : MonoBehaviour
 
     public Wall CreateNewWall()
     {
-        Wall wall = Instantiate(_wallsInfo.WallPrefab, _wallsInfo.SpawnPoint.transform);
+        Wall wall = Instantiate(_wallsInfo.WallPrefab, transform);
 
         _pool.InitializeWall(wall);
 

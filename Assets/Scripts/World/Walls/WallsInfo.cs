@@ -1,12 +1,13 @@
 using UnityEngine;
 
-public class WallsInfo : MonoBehaviour
+[CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/WallsInfo")]
+public class WallsInfo : ScriptableObject
 {
     public int WallsCount;
 
     public Wall WallPrefab;
 
-    public GameObject SpawnPoint;
+    public Vector3 SpawnPoint;
 
     public float YOffset;
 
