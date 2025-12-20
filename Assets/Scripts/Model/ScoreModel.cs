@@ -9,7 +9,7 @@ public class ScoreModel : Model
 
     public override void SetData()
     {
-        _score++;
+        Add();
 
         _view.Display(_score);
     }

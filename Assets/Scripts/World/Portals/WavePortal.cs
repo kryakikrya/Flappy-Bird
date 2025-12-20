@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class WavePortal : Portal
+public class WavePortal : StrategyPortal
 {
     [SerializeField] private float _speedScale = 3f;
 

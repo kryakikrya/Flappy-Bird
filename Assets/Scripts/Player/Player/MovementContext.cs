@@ -6,6 +6,8 @@ public class MovementContext : MonoBehaviour
 
     private Rigidbody2D _rb;
 
+    public IMoveStrategy CurrentStrategy() => _currentStrategy;
+
     private void Awake()
     {
         _currentStrategy = new UfoStrategy(0, 0);
@@ -46,6 +48,15 @@ public class MovementContext : MonoBehaviour
             exit.Exit(_rb.gameObject);
         }
 
+        bool reversed = _currentStrategy.IsReversed;
+
         _currentStrategy = strategy;
+
+        transform.localScale = Vector3.one;
+
+        if (reversed)
+        {
+            _currentStrategy.Reverse(transform);
+        }
     }
 }

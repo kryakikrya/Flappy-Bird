@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class StartPortal : Portal
+public class StartPortal : StrategyPortal
 {
     [SerializeField] private float _jumpForce = 5f;
 

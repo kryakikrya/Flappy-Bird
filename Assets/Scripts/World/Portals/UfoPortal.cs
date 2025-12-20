@@ -1,7 +1,7 @@
 
 using UnityEngine;
 
-public class UfoPortal : Portal
+public class UfoPortal : StrategyPortal
 {
     [SerializeField] private float _jumpForce = 5f;
 

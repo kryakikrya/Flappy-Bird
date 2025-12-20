@@ -6,13 +6,7 @@ public class SceneController : MonoBehaviour
 {
     [SerializeField] private string _menuName = string.Empty;
 
-    private SignalBus _signalBus;
-
-    [Inject]
-    public void Construct(SignalBus signalBus)
-    {
-        _signalBus = signalBus;
-    }
+    [Inject]  private SignalBus _signalBus;
 
     private void OnEnable()
     {

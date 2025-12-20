@@ -12,19 +12,13 @@ public abstract class Portal : MonoBehaviour
         _signalBus = signalBus;
     }
 
-    public virtual void ChangePlayerStrategy(MovementContext context)
-    {
-        if (_moveStrategy != null)
-        {
-            context.ChangeStrategy(_moveStrategy);
-        }
-    }
+    public abstract void Action(MovementContext context);
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.TryGetComponent(out MovementContext context))
         {
-            ChangePlayerStrategy(context);
+            Action(context);
             _signalBus?.Fire<PortalPassedSignal>();
         }
     }

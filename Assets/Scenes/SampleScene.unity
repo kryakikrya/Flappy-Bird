@@ -845,8 +845,8 @@ MonoBehaviour:
   WallPrefab: {fileID: 6361698281638682869, guid: e62d9eeeb6a875147a105f0150b35c51, type: 3}
   SpawnPoint: {fileID: 701829426}
   YOffset: 3
-  Cooldown: 2.1
-  CooldownOffset: 0.4
+  Cooldown: 1.1
+  CooldownOffset: 0.3
 --- !u!114 &701829429
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2834,6 +2834,7 @@ MonoBehaviour:
   _portals:
   - {fileID: 5799775665011540188, guid: 78ddd2ef62bd2ce4eaf7ce3a04d117ec, type: 3}
   - {fileID: 6865973379351860152, guid: 76d93acca7b3d6643a5b4c92241d9e68, type: 3}
+  - {fileID: 9099312586947158292, guid: 82a3d11b0eb8bb240b022b21b65e70f6, type: 3}
 --- !u!4 &1825350697378876887
 Transform:
   m_ObjectHideFlags: 0
