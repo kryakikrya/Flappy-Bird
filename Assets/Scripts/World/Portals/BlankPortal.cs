@@ -1,5 +1,6 @@
 using UnityEngine;
 using Zenject;
+
 public class BlankPortal : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer _color;

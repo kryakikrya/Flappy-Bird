@@ -22,8 +22,6 @@ public class MovementContext : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(_currentStrategy.IsReversed);
-
         if (_currentStrategy.IsHoldable)
         {
             if (Input.GetKey(_key))
@@ -55,16 +53,6 @@ public class MovementContext : MonoBehaviour
             exit.Exit(_rb.gameObject);
         }
 
-        if (_currentStrategy.IsReversed)
-        {
-            _currentStrategy = strategy;
-            _currentStrategy.Reverse(transform);
-        }
-        else
-        {
-            _currentStrategy = strategy;
-        }
-
-        Debug.Log(_currentStrategy.GetType().Name);
+        _currentStrategy = strategy;
     }
 }
