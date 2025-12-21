@@ -1,8 +1,11 @@
 using UnityEngine;
+using Zenject;
 
 public class MovementContext : MonoBehaviour
 {
     [SerializeField] private KeyCode _key;
+
+    [Inject] IMoveStrategy _startStrategy;
 
     private IMoveStrategy _currentStrategy;
 
@@ -12,13 +15,15 @@ public class MovementContext : MonoBehaviour
 
     private void Awake()
     {
-        _currentStrategy = new UfoStrategy(0, 0);
+        _currentStrategy = _startStrategy;
 
         _rb = GetComponent<Rigidbody2D>();
     }
 
     private void Update()
     {
+        Debug.Log(_currentStrategy.IsReversed);
+
         if (_currentStrategy.IsHoldable)
         {
             if (Input.GetKey(_key))
@@ -50,15 +55,16 @@ public class MovementContext : MonoBehaviour
             exit.Exit(_rb.gameObject);
         }
 
-        bool reversed = _currentStrategy.IsReversed;
-
-        _currentStrategy = strategy;
-
-        transform.localScale = Vector3.one;
-
-        if (reversed)
+        if (_currentStrategy.IsReversed)
         {
+            _currentStrategy = strategy;
             _currentStrategy.Reverse(transform);
         }
+        else
+        {
+            _currentStrategy = strategy;
+        }
+
+        Debug.Log(_currentStrategy.GetType().Name);
     }
 }

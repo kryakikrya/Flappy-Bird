@@ -1,4 +1,5 @@
 using UnityEngine;
+using Zenject;
 
 public class Wall : MonoBehaviour
 {
@@ -6,22 +7,21 @@ public class Wall : MonoBehaviour
 
     [SerializeField] private GameObject _portalPoint;
 
+    [SerializeField] private BlankPortal _portal;
+
     private WallsPool _pool;
 
-    private Portal _portal;
-
     public Transform PortalPoint() => _portalPoint.transform;
-
-    public Portal Portal() => _portal;
 
     public void InitializePool(WallsPool pool)
     {
         _pool = pool;
     }
 
-    public void SetPortal(Portal portal)
+    public void SetPortal(Portal portal, SignalBus bus)
     {
-        _portal = portal;
+        _portal.ChangePortal(portal);
+        _portal.InitializeBus(bus);
     }
 
     private void Update()

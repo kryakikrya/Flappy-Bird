@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class WaveStrategy : IMoveStrategy, INeedExit
 {
-    public bool IsReversed { get; private set; }
+    public bool IsReversed { get; private set; } = false;
 
     private const float _angle = 25f;
 
@@ -11,8 +11,6 @@ public class WaveStrategy : IMoveStrategy, INeedExit
     public WaveStrategy(float speed)
     {
         _scale = speed;
-
-        IsReversed = false;
     }
 
     public void Move(float deltaTime, Rigidbody2D rb)
@@ -36,13 +34,21 @@ public class WaveStrategy : IMoveStrategy, INeedExit
     public void Exit(GameObject player)
     {
         player.transform.rotation = Quaternion.Euler(0, 0, 0);
+        player.transform.localScale = Vector3.one;
     }
 
     public void Reverse(Transform player)
     {
-        player.localScale = new Vector3(player.localScale.x, player.localScale.y * -1, player.localScale.z);
-
-        IsReversed = !IsReversed;
+        if (IsReversed)
+        {
+            IsReversed = false;
+            player.localScale = new Vector3(player.localScale.x, 1, player.localScale.z);
+        }
+        else
+        {
+            IsReversed = true;
+            player.localScale = new Vector3(player.localScale.x, -1, player.localScale.z);
+        }
     }
 
     public bool IsHoldable

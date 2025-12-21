@@ -2019,6 +2019,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 0
   _portalPoint: {fileID: 0}
+  _portal: {fileID: 0}
 --- !u!224 &1479877718
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2043,7 +2044,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 12.610607, y: -3.5351925}
+  m_AnchoredPosition: {x: 12.610607, y: -4.07}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!61 &1479877719
@@ -2372,6 +2373,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 0
   _portalPoint: {fileID: 0}
+  _portal: {fileID: 0}
 --- !u!224 &1875519212
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2396,7 +2398,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 14.070606, y: 9.394808}
+  m_AnchoredPosition: {x: 14.070606, y: 9.89}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!61 &1875519213
@@ -2816,10 +2818,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _wallsInfo: {fileID: 11400000, guid: c29b46b5818c3d347bc21b89fb2b3365, type: 2}
-  _portals:
-  - {fileID: 5799775665011540188, guid: 78ddd2ef62bd2ce4eaf7ce3a04d117ec, type: 3}
-  - {fileID: 6865973379351860152, guid: 76d93acca7b3d6643a5b4c92241d9e68, type: 3}
-  - {fileID: 9099312586947158292, guid: 82a3d11b0eb8bb240b022b21b65e70f6, type: 3}
+  _force: 4
+  _gravity: -7
 --- !u!4 &1825350697378876887
 Transform:
   m_ObjectHideFlags: 0

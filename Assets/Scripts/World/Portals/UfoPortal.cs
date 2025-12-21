@@ -1,14 +1,11 @@
-
 using UnityEngine;
 
 public class UfoPortal : StrategyPortal
 {
-    [SerializeField] private float _jumpForce = 5f;
-
-    [SerializeField] private float _gravityScale = -7f;
-
-    private void Awake()
+    public UfoPortal(float jumpForce, float gravityScale, Color color)
     {
-        _moveStrategy = new UfoStrategy(_jumpForce, _gravityScale);
+        _moveStrategy = new UfoStrategy(jumpForce, gravityScale);
+
+        _color = color;
     }
 }

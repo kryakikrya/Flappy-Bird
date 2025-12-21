@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class WavePortal : StrategyPortal
 {
-    [SerializeField] private float _speedScale = 3f;
-
-    private void Awake()
+    public WavePortal(float speedScale, Color color)
     {
-        _moveStrategy = new WaveStrategy(_speedScale);
+        _moveStrategy = new WaveStrategy(speedScale);
+
+        _color = color;
     }
 }

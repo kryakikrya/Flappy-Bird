@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class UfoStrategy : IMoveStrategy
+public class UfoStrategy : IMoveStrategy, INeedExit
 {
-    public bool IsReversed { get; private set; }
+    public bool IsReversed { get; private set; } = false;
 
     private float _jumpForce = 5f;
 
@@ -34,9 +34,22 @@ public class UfoStrategy : IMoveStrategy
 
     public void Reverse(Transform player)
     {
-        player.localScale = new Vector3(player.localScale.x, player.localScale.y * -1, player.localScale.z);
+        if (IsReversed)
+        {
+            IsReversed = false;
+            player.localScale = new Vector3(player.localScale.x, 1, player.localScale.z);
+        }
+        else
+        {
+            IsReversed = true;
+            player.localScale = new Vector3(player.localScale.x, -1, player.localScale.z);
+        }
+    }
 
-        IsReversed = !IsReversed;
+    public void Exit(GameObject player)
+    {
+        player.transform.rotation = Quaternion.Euler(0, 0, 0);
+        player.transform.localScale = Vector3.one;
     }
 
     public bool IsHoldable 

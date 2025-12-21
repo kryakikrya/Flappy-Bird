@@ -66,15 +66,6 @@ public class WallsPoolController : MonoBehaviour
 
         Portal portal = _portalList[rnd];
 
-        if (wall.Portal() != null)
-        {
-            Destroy(wall.Portal().gameObject);
-        }
-
-        Portal newPortal = Instantiate(portal, wall.PortalPoint());
-
-        newPortal.InitializeBus(_signalBus);
-
-        wall.SetPortal(newPortal);
+        wall.SetPortal(portal, _signalBus);
     }
 }

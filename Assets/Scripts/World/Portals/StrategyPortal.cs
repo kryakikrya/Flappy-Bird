@@ -7,7 +7,7 @@ public abstract class StrategyPortal : Portal
 
     public virtual void ChangePlayerStrategy(MovementContext context)
     {
-        if (_moveStrategy != null)
+        if (_moveStrategy != null && context.CurrentStrategy() != _moveStrategy)
         {
             context.ChangeStrategy(_moveStrategy);
         }
