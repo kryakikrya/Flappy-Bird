@@ -24,25 +24,35 @@ public class MovementContext : MonoBehaviour
     {
         if (_currentStrategy.IsHoldable)
         {
-            if (Input.GetKey(_key))
-            {
-                _currentStrategy.Move(Time.deltaTime, _rb);
-            }
-            else
-            {
-                _currentStrategy.ApplyGravity(Time.deltaTime, _rb);
-            }
+            UseHoldableStrategy();
         }
         else
         {
-            if (Input.GetKeyDown(_key))
-            {
-                _currentStrategy.Move(Time.deltaTime, _rb);
-            }
-            else
-            {
-                _currentStrategy.ApplyGravity(Time.deltaTime, _rb);
-            }
+            UseNotHoldableStrategy();
+        }
+    }
+
+    public void UseHoldableStrategy()
+    {
+        if (Input.GetKey(_key))
+        {
+            _currentStrategy.Move(Time.deltaTime, _rb);
+        }
+        else
+        {
+            _currentStrategy.ApplyGravity(Time.deltaTime, _rb);
+        }
+    }
+
+    public void UseNotHoldableStrategy()
+    {
+        if (Input.GetKeyDown(_key))
+        {
+            _currentStrategy.Move(Time.deltaTime, _rb);
+        }
+        else
+        {
+            _currentStrategy.ApplyGravity(Time.deltaTime, _rb);
         }
     }
 

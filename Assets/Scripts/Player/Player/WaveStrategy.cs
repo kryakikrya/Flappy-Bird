@@ -8,6 +8,15 @@ public class WaveStrategy : IMoveStrategy, INeedExit
 
     private float _scale = 3f;
 
+    public bool IsHoldable
+    {
+        get
+        {
+            return true;
+        }
+        set { }
+    }
+
     public WaveStrategy(float speed)
     {
         _scale = speed;
@@ -50,14 +59,5 @@ public class WaveStrategy : IMoveStrategy, INeedExit
             IsReversed = true;
             player.localScale = new Vector3(player.localScale.x, -1, player.localScale.z);
         }
-    }
-
-    public bool IsHoldable
-    {
-        get
-        {
-            return true;
-        }
-        set { }
     }
 }

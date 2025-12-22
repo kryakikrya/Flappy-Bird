@@ -8,6 +8,15 @@ public class UfoStrategy : IMoveStrategy, INeedExit
 
     private float _gravityScale = -7f;
 
+    public bool IsHoldable
+    {
+        get
+        {
+            return false;
+        }
+        set { }
+    }
+
     public UfoStrategy(float force, float gravity)
     {
         _jumpForce = force;
@@ -51,14 +60,5 @@ public class UfoStrategy : IMoveStrategy, INeedExit
         player.transform.rotation = Quaternion.Euler(0, 0, 0);
         player.transform.localScale = Vector3.one;
         IsReversed = false;
-    }
-
-    public bool IsHoldable 
-    { 
-        get
-        {
-            return false;
-        }
-        set { }
     }
 }
