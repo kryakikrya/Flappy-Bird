@@ -678,7 +678,7 @@ GameObject:
   - component: {fileID: 682420989}
   - component: {fileID: 682420988}
   m_Layer: 0
-  m_Name: Scene Conreoller
+  m_Name: Scene Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -696,7 +696,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a65845a988fde04bbef22205b9e6bda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _menuName: 
+  _menuName: Menu
 --- !u!4 &682420989
 Transform:
   m_ObjectHideFlags: 0
@@ -2818,7 +2818,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _wallsInfo: {fileID: 11400000, guid: c29b46b5818c3d347bc21b89fb2b3365, type: 2}
-  _force: 4
+  _force: 3
   _gravity: -7
 --- !u!4 &1825350697378876887
 Transform:

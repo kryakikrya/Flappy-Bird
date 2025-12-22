@@ -35,6 +35,7 @@ public class WaveStrategy : IMoveStrategy, INeedExit
     {
         player.transform.rotation = Quaternion.Euler(0, 0, 0);
         player.transform.localScale = Vector3.one;
+        IsReversed = false;
     }
 
     public void Reverse(Transform player)

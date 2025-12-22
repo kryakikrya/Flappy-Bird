@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Zenject;
+using YG;
 
 public class SceneController : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class SceneController : MonoBehaviour
     private void OnEnable()
     {
         _signalBus.Subscribe<PlayerDiedSignal>(OnPlayerDied);
+        YG2.onCloseAnyAdv += ChangeScene;
     }
 
     private void OnDisable()
@@ -19,6 +21,11 @@ public class SceneController : MonoBehaviour
     }
 
     private void OnPlayerDied(PlayerDiedSignal signal)
+    {
+        YG2.InterstitialAdvShow();
+    }
+
+    private void ChangeScene()
     {
         if (_menuName != string.Empty)
         {
