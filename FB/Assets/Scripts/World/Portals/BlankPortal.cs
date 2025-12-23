@@ -23,9 +23,9 @@ public class BlankPortal : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.TryGetComponent(out MovementContext context))
+        if (collision.TryGetComponent(out Player player))
         {
-            _portal.Action(context);
+            _portal.Action(player);
             _signalBus.Fire<PortalPassedSignal>();
         }
     }

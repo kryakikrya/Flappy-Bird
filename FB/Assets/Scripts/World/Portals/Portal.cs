@@ -6,7 +6,7 @@ public abstract class Portal
 
     protected IMoveStrategy _moveStrategy;
 
-    public abstract void Action(MovementContext context);
+    public abstract void Action(Player player);
 
     public Color GetColor() => _color;
 }

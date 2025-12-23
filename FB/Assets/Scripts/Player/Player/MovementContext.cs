@@ -1,11 +1,8 @@
 using UnityEngine;
-using Zenject;
 
-public class MovementContext : MonoBehaviour
+public class MovementContext
 {
-    [SerializeField] private KeyCode _key;
-
-    [Inject] IMoveStrategy _startStrategy;
+    private KeyCode _key;
 
     private IMoveStrategy _currentStrategy;
 
@@ -13,14 +10,16 @@ public class MovementContext : MonoBehaviour
 
     public IMoveStrategy CurrentStrategy() => _currentStrategy;
 
-    private void Awake()
+    public MovementContext(KeyCode key, IMoveStrategy startStrategy, Rigidbody2D rb)
     {
-        _currentStrategy = _startStrategy;
+        _key = key;
 
-        _rb = GetComponent<Rigidbody2D>();
+        _currentStrategy = startStrategy;
+
+        _rb = rb;
     }
 
-    private void Update()
+    public void Tick()
     {
         if (_currentStrategy.IsHoldable)
         {

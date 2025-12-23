@@ -7,8 +7,8 @@ public class ReversePortal : Portal
         _color = color;
     }
 
-    public override void Action(MovementContext context)
+    public override void Action(Player player)
     {
-        context.CurrentStrategy().Reverse(context.transform);
+        player.Context().CurrentStrategy().Reverse(player.transform);
     }
 }

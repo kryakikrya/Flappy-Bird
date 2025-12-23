@@ -1,8 +1,8 @@
 public abstract class StrategyPortal : Portal
 {
-    public override void Action(MovementContext context)
+    public override void Action(Player player)
     {
-        ChangePlayerStrategy(context);
+        ChangePlayerStrategy(player.Context());
     }
 
     public virtual void ChangePlayerStrategy(MovementContext context)

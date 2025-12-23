@@ -13,11 +13,7 @@ public class GameInfoInstaller : MonoInstaller
 
     public override void InstallBindings()
     {
-        WallsPool pool = new WallsPool();
-
         Container.Bind<WallsInfo>().FromInstance(_wallsInfo).AsSingle();
-
-        IMoveStrategy defaultStrategy = new UfoStrategy(_force, _gravity);
 
         Container.Bind<IMoveStrategy>().To<UfoStrategy>().AsSingle().WithArguments(_force, _gravity);
 
