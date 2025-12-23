@@ -8,15 +8,6 @@ public class SignalInstaller : MonoInstaller
     {
         SignalBusInstaller.Install(Container);
 
-        Container.DeclareSignal<PlayerDiedSignal>();
-
         Container.DeclareSignal<PortalPassedSignal>();
-
-        SceneController controller = new SceneController(Container.Resolve<SignalBus>());
-    }
-
-    private void OnDestroy()
-    {
-        _sceneController?.Unsubscribe();
     }
 }

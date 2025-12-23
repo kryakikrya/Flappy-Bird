@@ -4,6 +4,8 @@ using System.Collections.Generic;
 
 public class GameInfoInstaller : MonoInstaller
 {
+    [SerializeField] private string _menuName = "Menu";
+
     [SerializeField] private WallsInfo _wallsInfo;
 
     private List<Portal> _portals = new List<Portal>();
@@ -22,6 +24,9 @@ public class GameInfoInstaller : MonoInstaller
         Container.Bind<List<Portal>>().FromInstance(_portals).AsSingle();
 
         Container.Bind<WallsPool>().AsSingle();
+
+        AdsController ads = new AdsController(_menuName);
+        Container.Bind<AdsController>().FromInstance(ads).AsSingle();
     }
 
     public void InitializePortals()

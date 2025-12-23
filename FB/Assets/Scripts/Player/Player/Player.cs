@@ -5,18 +5,18 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private KeyCode _key;
 
-    private SignalBus _signalBus;
-
     private MovementContext _movementContext;
+
+    private AdsController _adsController;
 
     public MovementContext Context() => _movementContext;
 
     [Inject]
-    private void Construct(IMoveStrategy startStrategy, SignalBus bus)
+    private void Construct(AdsController ads, IMoveStrategy startStrategy)
     {
-        _movementContext = new MovementContext(_key, startStrategy, GetComponent<Rigidbody2D>());
+        _adsController = ads;
 
-        _signalBus = bus;
+        _movementContext = new MovementContext(_key, startStrategy, GetComponent<Rigidbody2D>());
     }
 
     private void Update()
@@ -26,6 +26,6 @@ public class Player : MonoBehaviour
 
     public void Death()
     {
-        _signalBus.Fire<PlayerDiedSignal>();
+        _adsController.ShowAds();
     }
 }
